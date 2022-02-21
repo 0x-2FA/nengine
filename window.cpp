@@ -1,12 +1,16 @@
 #include "window.h"
 #include "SDL2/SDL.h"
+#include "GL/glew.h"
+#include <stdio.h>
+
+#include <string>
 
 namespace nengine
 {
   Window::Window(){}
   Window::~Window(){}
 
-  int Window::CreateWindow(char *name, int width, int height, unsigned int flags)
+  int Window::CreateWindow(const char *name, int width, int height, unsigned int flags)
   {
     Uint32 fl = SDL_WINDOW_OPENGL;
 
@@ -21,7 +25,7 @@ namespace nengine
     }
 
 
-    sdl_window = SDL_CreateWindow(name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, flags);
+    sdl_window = SDL_CreateWindow(name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, fl);
 
     if(sdl_window == nullptr)
     {
@@ -47,6 +51,7 @@ namespace nengine
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    return 0;
   }
 
   int Window::GetWindowWidth()

@@ -4,6 +4,7 @@
 #include "SDL2/SDL.h"
 #include "GL/glew.h"
 #include <stdio.h>
+#include <string>
 
 namespace nengine
 {
@@ -22,7 +23,7 @@ namespace nengine
       /* 
       * Create a window.
       */
-      int CreateWindow(char *name,  int width, int height, unsigned int flags);
+      int CreateWindow(const char *name,  int width, int height, unsigned int flags);
       
       /*
       * Return the width of the current window. 
