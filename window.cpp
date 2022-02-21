@@ -58,4 +58,9 @@ namespace nengine
   {
     return window_height;
   }
+
+  void Window::SwapBuffer()
+  {
+    SDL_GL_SwapWindow(sdl_window);
+  }
 }
