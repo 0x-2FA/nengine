@@ -19,5 +19,24 @@ namespace nengine
     {
       fl |= SDL_WINDOW_BORDERLESS;
     }
+
+
+    sdl_window = SDL_CreateWindow(name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, flags);
+
+    if(sdl_window == nullptr)
+    {
+      printf("Could not create sdl window.\n");
+      return -1;
+    }
+
+    SDL_GLContext ogl_context = SDL_GL_CreateContext(sdl_window);
+
+    if(ogl_context == nullptr)
+    {
+      printf("Could not create OpenGL context.\n");
+      return -1;
+    }
+    
+
   }
 }
