@@ -48,4 +48,14 @@ namespace nengine
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   }
+
+  int Window::GetWindowWidth()
+  {
+    return window_width;
+  }
+
+  int Window::GetWindowHeight()
+  {
+    return window_height;
+  }
 }
