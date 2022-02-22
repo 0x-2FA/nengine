@@ -8,8 +8,8 @@ namespace nengine
   class Game
   {
     public:
-     Game(){};
-     virtual ~Game(){};
+     Game();
+     virtual ~Game();
 
      void Run();
 
@@ -19,6 +19,11 @@ namespace nengine
      virtual void OnExit() = 0;
 
      void OnEvent(SDL_Event &event);
+
+     /* 
+     * Return current FPS.
+     */
+     const float GetFPS();
 
     private:
 
