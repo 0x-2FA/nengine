@@ -26,7 +26,10 @@ namespace nengine
      const float GetFPS();
 
     private:
+      bool Init();
 
+      virtual void Update();
+      virtual void Draw();
   };
 
 }
